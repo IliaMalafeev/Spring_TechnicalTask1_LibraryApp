@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+</head>
+<body>
+
+<p th:text="${book.getTitle() + ', ' + book.getAuthor() + ', ' + book.getYearOfPublication()}">VALUE</p>
+<hr>
+
+<div th:if="${people}">
+    This book is free to take. Who should it be assigned to?
+    <br><br>
+
+    <form th:method="PATCH" th:action="@{/books/{id}/assign(id=${book.getId()})}">
+        <label for="person">Choose person: </label>
+        <select th:object="${person}" th:field="*{id}" id="person">
+            <option th:each="person : ${people}" th:value="${person.getId()}" th:text="${person.getFullName()}"></option>
+        </select>
+        <input type="submit" value="Assign book to this person"/>
+    </form>
+
+    <hr>
+</div>
+
+<div th:if="${holder}">
+    This book is currently assigned to:
+    <br>
+    <p th:text="${holder.getFullName()}">VALUE</p>
+
+    <form th:method="PATCH" th:action="@{/books/{id}/unbind(id=${book.getId()})}">
+        <input type="submit" value="Unbind this book"/>
+    </form>
+
+    <hr>
+</div>
+
+<form th:method="GET" th:action="@{/books/{id}/edit(id=${book.getId()})}">
+    <input type="submit" value="Edit book"/>
+</form>
+
+<form th:method="DELETE" th:action="@{/books/{id}(id=${book.getId()})}">
+  <input type="submit" value="Delete book"/>
+</form>
+
+<br><br>
+<a href="/books">Back to all books</a>
+
+</body>
+</html>
