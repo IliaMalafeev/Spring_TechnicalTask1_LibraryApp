@@ -1,4 +1,4 @@
-driver =
+driver = org.postgresql.Driver
 url =
 username =
 password =
