@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ru.iliamalafeev.springcourse</groupId>
-  <artifactId>AlishevCourseProject1</artifactId>
+  <artifactId>TechnicalTaskProject1</artifactId>
   <packaging>war</packaging>
   <properties>
     <maven.compiler.source>19</maven.compiler.source>
@@ -11,7 +11,7 @@
   </properties>
   <version>1.0-SNAPSHOT</version>
 
-  <name>AlishevCourseProject1 Maven Webapp</name>
+  <name>TechnicalTaskProject1 Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>
@@ -81,6 +81,6 @@
   </dependencies>
 
   <build>
-    <finalName>AlishevCourseProject1</finalName>
+    <finalName>TechnicalTaskProject1</finalName>
   </build>
 </project>
