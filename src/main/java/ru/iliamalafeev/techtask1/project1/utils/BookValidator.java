@@ -8,13 +8,6 @@ import ru.iliamalafeev.techtask1.project1.models.Book;
 @Component
 public class BookValidator implements Validator {
 
-//    private final BookDAO bookDAO;
-//
-//    @Autowired
-//    public BookValidator(BookDAO bookDAO) {
-//        this.bookDAO = bookDAO;
-//    }
-
     @Override
     public boolean supports(Class<?> clazz) {
         return Book.class.equals(clazz);
